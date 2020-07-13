@@ -51,13 +51,50 @@ $(".hideBtnThree").click(function() {
 });
 
 $(".hideAllBtns").click(function() {
-    $(".firstBox,.secondBox,.thirdBox").hide("slow");
+    let rand = Math.floor(Math.random() * 3);
+    
+    if (rand == 0) {
+        $(".firstBox,.secondBox,.thirdBox").hide("slow");
+    }
+    else if (rand == 1) {
+        $(".firstBox,.secondBox,.thirdBox").slideUp("slow");
+    }
+    else {
+        $(".firstBox,.secondBox,.thirdBox").fadeOut("slow");
+    }
 });
 
 $(".resetBtn").click(function() {
+
+    if ($(".firstBox").css('display') == 'none' && $(".secondBox").css('display') == 'none' && $(".thirdBox").css('display') == 'none') {
+        return;
+    }
+    else if ($(".firstBox").css('display') == 'none' && $(".secondBox").css('display') == 'none') {
+        $(".thirdBox").removeAttr('style');
+    }
+    else if ($(".firstBox").css('display') == 'none' && $(".thirdBox").css('display') == 'none') {
+        $(".secondBox").removeAttr('style');
+    }
+    else if ($(".secondBox").css('display') == 'none' && $(".thirdBox").css('display') == 'none') {
+        $(".firstBox").removeAttr('style');
+    }
+    else if ($(".firstBox").css('display') == 'none') {
+        $(".secondBox").removeAttr('style');
+        $(".thirdBox").removeAttr('style');
+    }
+    else if ($(".secondBox").css('display') == 'none') {
+        $(".firstBox").removeAttr('style');
+        $(".thirdBox").removeAttr('style');
+    }
+    else if ($(".thirdBox").css('display') == 'none') {
+        $(".firstBox").removeAttr('style');
+        $(".secondBox").removeAttr('style');
+    }
+    else {
         $(".firstBox").removeAttr('style');
         $(".secondBox").removeAttr('style');
         $(".thirdBox").removeAttr('style');
+    }
 });
 
 $(".showBtn").click(function() {
