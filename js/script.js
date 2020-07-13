@@ -1,43 +1,67 @@
-var colors = ["red","orange","yellow","green","blue","purple","brown", "chocolate","darkgreen", "deeppink", "lightseagreen", "navy", "steelblue", "lime", "tomato", "violet"];
-var borders = ["solid","dotted","dashed","double","inset"];
+var colors = ["red","orange","yellow","green","blue","purple","brown","chocolate","darkgreen","deeppink","lightseagreen","navy","steelblue","lime","tomato","violet","chartreuse","darkred","gold","royalblue","firebrick"];
+var borders = ["solid","dotted","dashed","double","inset","onset","groove"];
 
+function setBackground(){
+    let backgroundColor = Math.floor(Math.random() * colors.length);
+    return backgroundColor;
+}
+
+function setBorder() {
+    let borderSelect = Math.floor(Math.random() * borders.length);
+    let borderColor = Math.floor(Math.random() * colors.length);
+
+    let newBorder = borders[borderSelect] + " " + colors[borderColor];
+    return newBorder;
+}
 
 $(".changeBtnOne").click(function() {
-    console.log("click 1");
+    $(".firstBox").css("background", colors[setBackground()]);
+    $(".firstBox").css("border", setBorder());
 });
 
 $(".changeBtnTwo").click(function() {
-    console.log("click 2");
+    $(".secondBox").css("background", colors[setBackground()]);
+    $(".secondBox").css("border", setBorder());
 });
 
 $(".changeBtnThree").click(function() {
-    console.log("click 3");
+    $(".thirdBox").css("background", colors[setBackground()]);
+    $(".thirdBox").css("border", setBorder());
 });
 
 $(".changeAllBtns").click(function() {
-    console.log("click all");
+    $(".firstBox").css("background", colors[setBackground()]);
+    $(".firstBox").css("border", setBorder());
+    $(".secondBox").css("background", colors[setBackground()]);
+    $(".secondBox").css("border", setBorder());
+    $(".thirdBox").css("background", colors[setBackground()]);
+    $(".thirdBox").css("border", setBorder());
 });
 
 $(".hideBtnOne").click(function() {
-    console.log("Hide 1");
+    $(".firstBox").hide("slow");
 });
 
 $(".hideBtnTwo").click(function() {
-    console.log("Hide 2");
+    $(".secondBox").slideUp("slow");
 });
 
 $(".hideBtnThree").click(function() {
-    console.log("Hide 3");
+    $(".thirdBox").fadeOut("slow");
 });
 
 $(".hideAllBtns").click(function() {
-    console.log("Hide All");
+    $(".firstBox,.secondBox,.thirdBox").hide("slow");
 });
 
 $(".resetBtn").click(function() {
-    console.log("RESET");
+        $(".firstBox").removeAttr('style');
+        $(".secondBox").removeAttr('style');
+        $(".thirdBox").removeAttr('style');
 });
 
 $(".showBtn").click(function() {
-    console.log("SHOW");
+    $(".firstBox").show("slow");
+    $(".secondBox").slideDown("slow");
+    $(".thirdBox").fadeIn("slow");
 });
