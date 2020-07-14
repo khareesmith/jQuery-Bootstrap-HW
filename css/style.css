@@ -1,41 +1,53 @@
+/*Styles main text for the page. Also aligns all elements to center of parent using margin: auto.*/
 body {
     text-align: center;
     color: #000;
     font-size: 18px;
+    margin: 0 auto;
+    font-family: 'Quicksand', sans-serif;
 }
 
+/*Underlines text of each heading.*/
 h3, h4, h5 {
     text-decoration: underline;
 }
 
+/*Class for row that boxes are on. Gives height and centers boxes.*/
 .boxesRow {
     height: 100px;
+    margin: 0 auto;
 }
 
+/*Selects all divs in boxes row and sets height to be 100% of parent.*/
 .boxesRow div {
     height: 100%;
 }
 
+/*Styles first box.*/
 .firstBox {
     background: red;
     border: 3px solid #000;
 }
 
+/*Styles second box.*/
 .secondBox {
     background: blue;
     border: 3px dashed yellow;
     margin: 0 50px;
 }
 
+/*Styles third box.*/
 .thirdBox {
     background: limegreen;
     border: 3px solid purple;
 }
 
+/*Changes color of h4 and h5 heading.*/
 .changeTitle {
     color: blue;
 }
 
-.changeBtnsRow button {
+/*Selects all buttons in the change buttons rows and adds spacing to margins.*/
+.BtnsRow button {
     margin: 10px 5px;
 }
